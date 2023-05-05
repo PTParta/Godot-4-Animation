@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cpj7fcy47mkr4"]
+[gd_scene load_steps=15 format=3 uid="uid://b2820a8k3j3qx"]
 
 [ext_resource type="Texture2D" uid="uid://cxtn1xi7kgqao" path="res://assets/gBot_hip.png" id="1_885ga"]
 [ext_resource type="Texture2D" uid="uid://bqo7jfpwp8qi4" path="res://assets/gBot_arm_l.png" id="1_ax516"]
@@ -69,16 +69,6 @@ position = Vector2(3, -34)
 texture = ExtResource("2_0to61")
 offset = Vector2(11, -103)
 
-[node name="arm_r" type="Sprite2D" parent="hip/torso"]
-position = Vector2(-63, -79)
-rotation = 0.455437
-texture = ExtResource("3_2rhif")
-
-[node name="hand_r" type="Sprite2D" parent="hip/torso/arm_r"]
-position = Vector2(-19, 74)
-texture = ExtResource("4_l6l3f")
-offset = Vector2(14, 76)
-
 [node name="remote_arm_l" type="RemoteTransform2D" parent="hip/torso"]
 position = Vector2(81, -127)
 remote_path = NodePath("../../../arm_l")
@@ -107,3 +97,26 @@ remote_path = NodePath("../../../../shin_l")
 [node name="remote_foot_l" type="RemoteTransform2D" parent="hip/torso/remote_leg_l/remote_shin_l"]
 position = Vector2(-10, 113)
 remote_path = NodePath("../../../../../foot_l")
+
+[node name="arm_r" type="Sprite2D" parent="hip/torso"]
+position = Vector2(-71.4421, -104.875)
+rotation = 0.455437
+texture = ExtResource("3_2rhif")
+offset = Vector2(18.9627, 19.5238)
+
+[node name="hand_r" type="Sprite2D" parent="hip/torso/arm_r"]
+position = Vector2(1.86191, 86.915)
+texture = ExtResource("4_l6l3f")
+offset = Vector2(14, 76)
+
+[node name="end" type="Marker2D" parent="hip/torso/arm_r/hand_r"]
+
+[node name="arm_rBone2D" type="Bone2D" parent="hip/torso"]
+position = Vector2(-71, -104)
+rotation = 0.455437
+
+[node name="hand_rBone2D" type="Bone2D" parent="hip/torso/arm_rBone2D"]
+position = Vector2(0.163712, 88.9998)
+
+[node name="endBone2D" type="Bone2D" parent="hip/torso/arm_rBone2D/hand_rBone2D"]
+position = Vector2(16.3649, 131.172)
